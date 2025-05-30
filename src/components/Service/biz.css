@@ -1,0 +1,169 @@
+/* Product.css */
+
+/* Container */
+.product-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.5rem; /* roughly equivalent to Tailwind’s gap-6 */
+    padding: 1rem; /* approximates px-4 */
+    padding-right: 2.5rem; /* approximates lg:pr-10 for larger screens */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Title Container */
+  .product-title-container {
+    position: absolute;
+    top: 0;
+    left: 1.25rem; /* approximates left-5 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    margin-top: 2.5rem; /* approximates mt-10 */
+  }
+  
+  /* Main Title */
+  .product-title {
+    width: 100%;
+    max-width: 500px; /* md:w-[500px] */
+    padding: 1rem; /* approximates px-4 & py-2 */
+    font-size: 1.5rem; /* approximates text-2xl */
+    font-weight: bold;
+    color: black;
+    background-color: #00ffa0;
+    border: 4px solid black;
+    border-radius: 0.5rem; /* roughly Tailwind's rounded-lg */
+    box-shadow: 6px 6px 0px #530091;
+    transform: skewX(-10deg);
+  }
+  
+  /* Buttons Container */
+  .product-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2.5rem; /* approximates gap-10 */
+    width: 100%;
+    padding: 1rem; /* approximates px-4 */
+  }
+  
+  /* Individual Button */
+  .product-button {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 1rem; /* approximates px-4 & py-2 */
+    font-size: 1.25rem; /* approximates text-xl */
+    font-weight: bold;
+    color: white;
+    background-color: #6311df;
+    border: 4px solid black;
+    border-radius: 0.5rem;
+    box-shadow: 6px 6px 0px #00ffa0;
+    transform: rotate(-4deg) skewX(-10deg);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  /* Hover and Active States */
+  .product-button:hover {
+    transform: scale(1.1) rotate(-4deg) skewX(-10deg);
+    box-shadow: 10px 10px 0px #530091;
+  }
+  
+  .product-button:active {
+    transform: scale(0.95) rotate(-4deg) skewX(-10deg);
+  }
+  
+  /* Alignment modifiers */
+  .mr-0 {
+    margin-right: 0;
+  }
+  
+  .mr-20 {
+    margin-right: 5rem; /* Tailwind’s mr-20 is roughly 5rem */
+  }
+  
+  /* Footer Image */
+  .product-footer-image {
+    position: absolute;
+    bottom: 0;
+    left: 1.25rem; /* approximates left-5 */
+    width: 60%;
+    display: block;
+  }
+  
+  /* Comic Effect Styling */
+  .comic-effect {
+    font-family: 'Fredoka One', cursive;
+    position: relative;
+  }
+  
+  .comic-effect::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 4px;
+    left: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: -1;
+  }
+  
+  @keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .comic-effect:hover {
+    animation: wobble 0.3s ease-in-out infinite alternate;
+  }
+  
+  /* Responsive adjustments for screens above 728px */
+  @media (min-width: 728px) {
+    .product-title {
+      padding: 1.5rem 2.5rem; /* approximates lg:px-10 & lg:py-6 */
+      font-size: 3rem; /* adjust as needed (Tailwind’s lg:text-5xl is larger) */
+    }
+    .product-button {
+      max-width: 400px;
+      padding: 1.5rem 3rem; /* approximates lg:px-10 & lg:py-6 */
+      font-size: 1.5rem; /* approximates sm:text-2xl */
+    }
+    .product-footer-image {
+      left: 2.5rem; /* approximates md:left-10 / lg:left-16 */
+      width: 35%;
+    }
+  }
+  
+  /* Responsive adjustments for screens 728px and below */
+  @media (max-width: 727px) {
+    .product-buttons-container {
+      align-items: center; /* Center the buttons */
+      display: flex;
+      flex-direction: column;
+      width: 100%; /* Ensure full width usage */
+      padding: 0; /* Remove extra padding */
+    }
+  
+    .product-button {
+      width: 80%; /* Make sure it fits the screen */
+      max-width: 280px; /* Prevent too large buttons */
+      transform: none !important; /* Remove rotation & skew */
+      margin: 0 auto; /* Center the buttons */
+    }
+  }
+  
+  
+  
+  
